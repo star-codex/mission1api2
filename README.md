@@ -12,13 +12,15 @@ Risk rating is calculated by counting the number of occurrences of a list of key
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* @jest/globals
+* @types/jest
+* express
+* jest
+* node
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* npm install
 
 ### Executing program
 
