@@ -20,7 +20,7 @@ Risk rating is calculated by counting the number of occurrences of a list of key
 
 ### Installing
 
-* npm install
+* NPM install
 
 ### Executing program
 
