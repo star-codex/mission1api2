@@ -1,4 +1,4 @@
-// Function to calculate risk rating (as defined in the previous response)
+// Function to calculate risk rating
 function calculateRiskRating(inputText) {
 	const keywords = ['collide', 'crash', 'scratch', 'bump', 'smash'];
 	const lowerInput = inputText.toLowerCase();
