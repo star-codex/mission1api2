@@ -12,8 +12,8 @@ Risk rating is calculated by counting the number of occurrences of a list of key
 
 ### Dependencies
 
-* @jest/globals
-* @types/jest
+* ``` @jest/globals ```
+* ``` @types/jest ```
 * express
 * jest
 * node
