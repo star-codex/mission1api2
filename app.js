@@ -4,25 +4,10 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
+const calculateRiskRating = require('./riskCalculator');
+
 // Middleware to parse JSON requests
 app.use(bodyParser.json());
-
-// Function to calculate risk rating (as defined in the previous response)
-function calculateRiskRating(inputText) {
-	const keywords = ['collide', 'crash', 'scratch', 'bump', 'smash'];
-	const lowerInput = inputText.toLowerCase();
-	let riskRating = 0;
-
-	keywords.forEach((keyword) => {
-		const regex = new RegExp('\\b' + keyword + '\\b', 'gi');
-		const matches = lowerInput.match(regex);
-		if (matches) {
-			riskRating += matches.length;
-		}
-	});
-
-	return riskRating;
-}
 
 // API endpoint to calculate driver rating
 app.post('/calculateRating', (req, res) => {
@@ -52,7 +37,7 @@ if (require.main === module) {
 		console.log(`Server is running on port ${port}`);
 	});
 	// Export the app and server for testing purposes
-	module.exports = { app, server, calculateRiskRating };
+	module.exports = { app, server };
 } else {
 	// If required as a module, export only the app
 	module.exports = app;

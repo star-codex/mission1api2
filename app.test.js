@@ -1,14 +1,18 @@
 const request = require('supertest');
-const { server, app } = require('./app');
+const { server, app } = require('./app.js');
 
 // The following code ensures that the server is started before any tests run and closed after all tests have completed.
 
 // Hook to start the server before running tests
-beforeAll((done) => {
-	server.listen(3000, () => {
-		done();
-	});
+beforeAll(async () => {
+	await new Promise((resolve) => server.listen(3000, resolve));
 });
+
+// beforeAll((done) => {
+// 	server.listen(3000, () => {
+// 		done();
+// 	});
+// });
 
 // Hook to close the server after running tests
 afterAll((done) => {
