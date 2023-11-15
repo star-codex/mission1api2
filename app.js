@@ -29,10 +29,17 @@ app.post('/calculateRating', (req, res) => {
 	res.json({ suggestedRating });
 });
 
-// Start the server
-app.listen(port, () => {
-	console.log(`Server is running on port ${port}`);
-});
+// Only start the server if the script is run directly
+if (require.main === module) {
+	const server = app.listen(port, () => {
+		console.log(`Server is running on port ${port}`);
+	});
+	// Export the app and server for testing purposes
+	module.exports = { app, server };
+} else {
+	// If required as a module, export only the app
+	module.exports = app;
+}
 
 // Function to calculate risk rating (as defined in the previous response)
 function calculateRiskRating(inputText) {
