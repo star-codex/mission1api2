@@ -1,5 +1,5 @@
 const request = require('supertest');
-const { app, server } = require('./app');
+const { server, app } = require('./app');
 
 // The following code ensures that the server is started before any tests run and closed after all tests have completed.
 
