@@ -2,7 +2,7 @@
 function calculateRiskRating(inputText) {
 	const keywords = ['collide', 'crash', 'scratch', 'bump', 'smash'];
 	const lowerInput = inputText.toLowerCase();
-	let riskRating = 0;
+	let riskRating = 1;
 
 	keywords.forEach((keyword) => {
 		const regex = new RegExp('\\b' + keyword + '\\b', 'gi');
